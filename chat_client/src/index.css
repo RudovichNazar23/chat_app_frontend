@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@layer base {
+    * {
+      @apply text-[24px] font-sans;
+    }
+  }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background-color: #023E8A;
+    color: white;
+}
