@@ -2,9 +2,11 @@ import { JSX } from "react";
 
 export default function Header(): JSX.Element {
     return (
-        <div className="flex align-middle justify-center text-center p-5 w-full">
+        <div className="flex align-middle justify-center text-center lg:p-5 sm:p-2.5 sm:transition sm:duration-1000 w-full">
             <h2 className="
-                w-1/4 
+                lg:w-1/2
+                md:w-full
+                sm:w-full
                 p-2 
                 border 
                 rounded-2xl 
