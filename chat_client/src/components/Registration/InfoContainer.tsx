@@ -8,11 +8,12 @@ interface InfoContainerProps {
 export default function InfoContainer({ onClick, isOpen }: InfoContainerProps): JSX.Element {
     return (
         <>
-            <div className="w-full flex flex-row align-middle justify-between">
-                <div>
+            <div className="w-full flex lg:flex-row flex-col align-middle justify-between gap-2.5">
+                <div className="w-full lg:w-1/4 p-2.5">
                     <button 
                         type="button" 
                         className="
+                        w-full
                         text-white 
                         bg-gray-800 
                         hover:bg-gray-900 
@@ -31,7 +32,7 @@ export default function InfoContainer({ onClick, isOpen }: InfoContainerProps): 
                         Back
                     </button>
                 </div>
-                <div className="self-center p-2.5">
+                <div className="self-center p-2.5 sm:w-full lg:w-3/4 text-center">
                     About us
                 </div>
                 <div></div>
@@ -41,7 +42,7 @@ export default function InfoContainer({ onClick, isOpen }: InfoContainerProps): 
                 <p>Hello, we are Message.com!!!</p>
                 <p>
                     Here you can find new friends and chat with them. 
-                    Just create account by using <a href="#registration" className="text-blue-600 hover:underline">form</a> below or <a href="/login" className="text-blue-600 hover:underline">login</a> and start your journey
+                    Just create account by using <a href="#form" className="text-blue-600 hover:underline">form</a> below or <a href="/login" className="text-blue-600 hover:underline">login</a> and start your journey
                 </p>
             </div>
         </>
