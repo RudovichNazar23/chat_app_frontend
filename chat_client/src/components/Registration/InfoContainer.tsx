@@ -3,7 +3,7 @@ import { JSX } from "react";
 interface InfoContainerProps {
     onClick: () => void;
     isOpen: boolean
-};
+}
 
 export default function InfoContainer({ onClick, isOpen }: InfoContainerProps): JSX.Element {
     return (
