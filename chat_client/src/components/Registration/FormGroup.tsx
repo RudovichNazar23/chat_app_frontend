@@ -8,11 +8,10 @@ interface FormGroupProps {
     value: string | number | boolean,
     required: boolean,
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
-    onBlur: (event: React.FocusEvent<HTMLInputElement>) => void,
     fieldErrors: Array<string>
-};
+}
 
-export default function FormGroup({ labelValue, inputType, placeHolder, onChange, name, fieldErrors, onBlur }: FormGroupProps): JSX.Element {
+export default function FormGroup({ labelValue, inputType, placeHolder, onChange, name, fieldErrors, required }: FormGroupProps): JSX.Element {
     return (
         <div className="p-5 w-full">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -38,8 +37,8 @@ export default function FormGroup({ labelValue, inputType, placeHolder, onChange
                 dark:focus:border-blue-500" 
                 placeholder={placeHolder}
                 name={name}
+                required={required}
                 onChange={onChange}
-                onBlur={onBlur}
             />
             {
                 fieldErrors.length > 0 && (
