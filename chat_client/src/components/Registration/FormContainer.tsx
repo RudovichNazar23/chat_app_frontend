@@ -1,6 +1,6 @@
 import React, { JSX } from "react";
 
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { api } from "../../utils/api";
 import { ACCESS, REFRESH } from "../../utils/constants";
 import { useNavigate } from "react-router-dom";
@@ -8,11 +8,13 @@ import { registrationReducer } from "../../reducers/registrationReducer";
 
 import FormGroup from "./FormGroup";
 import LoadingButton from "../LoadingButton";
+import Modal from "./Modal.tsx";
 
 import { AxiosResponse } from "axios";
 import { RegistrationStateProps } from "../../interfaces/RegistrationStateProps";
 
 export default function FormContainer(): JSX.Element {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
     const navigate = useNavigate();
 
     const INITIAL_STATE: RegistrationStateProps = {
@@ -58,9 +60,12 @@ export default function FormContainer(): JSX.Element {
                     localStorage.setItem(REFRESH, response.data.refresh);
                     navigate("/");
                 }
+                else {
+                    setIsOpen(true);
+                }
             }
             catch (error: any){
-                navigate("/login");
+                setIsOpen(true)
             }
         }
         catch (error: any){
@@ -79,10 +84,11 @@ export default function FormContainer(): JSX.Element {
                     <LoadingButton/>
                 ) : (
                     <>
+                        {isOpen && <Modal/>}
                         <h1 className="text-4xl font-extrabold mt-5">
                             Registration
                         </h1>
-                        <form className="md:w-125" id="form" onSubmit={onSubmitHandler} method={"POST"}>
+                        <form className="md:w-125 z-1" id="form" onSubmit={onSubmitHandler} method={"POST"}>
                             <FormGroup 
                                 labelValue="Username" 
                                 inputType="text" 
