@@ -102,7 +102,8 @@ export default function FormContainer(): JSX.Element {
                             <FormGroup 
                                 labelValue="Password" 
                                 inputType="password" 
-                                name="password" 
+                                name="password"
+                                placeHolder={"Create a strong password"}
                                 value={state.fieldsValues.password}
                                 onChange={onChangeHandler}
                                 fieldErrors={state.fieldsErrors.password}
@@ -111,7 +112,8 @@ export default function FormContainer(): JSX.Element {
                             <FormGroup 
                                 labelValue="Repeat password" 
                                 inputType="password" 
-                                name="repeatPassword" 
+                                name="repeatPassword"
+                                placeHolder={"Type your strong password again"}
                                 value={state.fieldsValues.repeatPassword}
                                 onChange={onChangeHandler}
                                 fieldErrors={state.fieldsErrors.repeatPassword}
@@ -142,7 +144,7 @@ export default function FormContainer(): JSX.Element {
                                         "
                                     >
                                         Submit
-                                    </button>
+                                </button>
                             </div>
                         </form>
                     </>
