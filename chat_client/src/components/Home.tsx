@@ -7,16 +7,17 @@ import { HomeContext } from "../contexts/HomeContext.ts";
 
 import HeaderContainer from "./Home/HeaderContainer.tsx";
 import NavigationBar from "./Home/NavigationBar.tsx";
+import UserListContainer from "./Home/UserListContainer.tsx";
 
 export default function Home(): JSX.Element {
     const INITIAL_STATE: HomeStateProps = {
-        status: "chats",
+        status: "users",
     };
 
     const [state, dispatch] = useReducer(homeReducer, INITIAL_STATE);
 
     const components = {
-        "users": <div>Users</div>,
+        "users": <UserListContainer/>,
         "profile": <div>Profile</div>,
         "chats": <div>Chats</div>
     };
@@ -26,7 +27,7 @@ export default function Home(): JSX.Element {
             <div className={"grid grid-cols-3 gap-5"}>
                 <HeaderContainer/>
                 <NavigationBar/>
-                <div className={"border col-span-3"}>
+                <div className={"col-span-3 p-2"}>
                     {
                         components[state.status]
                     }
