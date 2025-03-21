@@ -20,7 +20,7 @@ export default function NavButton({ textValue, name }: NavButtonProps) {
 
     return (
         <a
-            className={`transition duration-1500 text-center group text-white`}
+            className={`text-center group`}
             href={"#"}
             onClick={onClickHandler}
         >
