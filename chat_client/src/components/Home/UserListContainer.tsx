@@ -10,7 +10,7 @@ import InfoHomeContainer from "./InfoHomeContainer.tsx";
 import UserLink from "./UserLink.tsx";
 
 export default function UserListContainer(): JSX.Element {
-    const INITIAL_STATE: UserContainerProps = { status: "initial", data: [], errorMessage: "",};
+    const INITIAL_STATE: UserContainerProps = { status: "loading", data: [], errorMessage: "",};
 
     const [state, dispatch] = useReducer(userContainerReducer, INITIAL_STATE);
 
@@ -62,14 +62,14 @@ export default function UserListContainer(): JSX.Element {
                        children={[<p>There are not any available users for you</p>]}
                    />
                ) : (
-                   <div className={"grid grid-cols-12 gap-5 p-2"}>
+                   <div className={"grid grid-cols-12 gap-5 md:p-2 p-1"}>
                        {
                            data.map(
                                (user: User): JSX.Element => (
                                    <>
-                                       <div className={"col-span-2"}/>
+                                       <div className={"md:col-span-2 md:inline hidden"}/>
                                         <UserLink user={user}/>
-                                       <div className={"col-span-2"}/>
+                                       <div className={"md:col-span-2 md:inline hidden"}/>
                                    </>
                                )
                            )
