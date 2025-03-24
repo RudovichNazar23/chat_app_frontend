@@ -6,9 +6,9 @@ interface InfoHomeContainerProps {
 
 export default function InfoHomeContainer({ children }: InfoHomeContainerProps): JSX.Element {
     return (
-        <div className="p-5 grid grid-cols-3">
+        <div className="p-5 grid md:grid-cols-3 grid-cols-9">
             <div></div>
-            <div className={"p-5"}>
+            <div className={"p-5 text-center"}>
                 { ...children }
             </div>
             <div></div>

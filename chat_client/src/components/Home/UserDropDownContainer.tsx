@@ -17,7 +17,7 @@ export default function UserDropDownContainer({ isOpen, user }: UserDropDownCont
 
     return (
         <div
-            className={`absolute top-[-120px] left-[120px] w-100 bg-white text-black p-2 rounded shadow-lg z-50 transition-all duration-300 ease-in-out 
+            className={`absolute top-[-225px] left-[-10px] w-55 md:left-[120px] md:w-100 bg-white text-black md:p-2 p-3 rounded shadow-lg z-50 transition-all duration-300 ease-in-out 
            ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"} text-start`}
         >
             {
