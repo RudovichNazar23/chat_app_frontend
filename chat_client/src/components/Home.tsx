@@ -9,6 +9,8 @@ import HeaderContainer from "./Home/HeaderContainer.tsx";
 import NavigationBar from "./Home/NavigationBar.tsx";
 import UserListContainer from "./Home/UserListContainer.tsx";
 
+import Profile from "./Profile.tsx";
+
 export default function Home(): JSX.Element {
     const INITIAL_STATE: HomeStateProps = {
         status: "users",
@@ -18,7 +20,7 @@ export default function Home(): JSX.Element {
 
     const components = {
         "users": <UserListContainer/>,
-        "profile": <div>Profile</div>,
+        "profile": <Profile/>,
         "chats": <div>Chats</div>
     };
 
