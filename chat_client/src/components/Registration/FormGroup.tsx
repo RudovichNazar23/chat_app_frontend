@@ -14,27 +14,24 @@ interface FormGroupProps {
 export default function FormGroup({ labelValue, inputType, placeHolder, onChange, name, fieldErrors, required }: FormGroupProps): JSX.Element {
     return (
         <div className="p-5 w-full">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label className="block mb-2 text-sm font-medium text-white">
                 { labelValue }:
             </label>
             <input 
                 type={inputType} 
                 className="
-                bg-gray-50 
-                border 
-                border-gray-300 
-                text-gray-900 
+                border
+                text-white
                 text-sm 
                 rounded-lg 
                 block 
                 w-full 
                 p-2.5 
-                dark:bg-gray-700 
-                dark:border-gray-600 
-                dark:placeholder-gray-400 
-                dark:text-white 
-                dark:focus:ring-blue-500 
-                dark:focus:border-blue-500" 
+                bg-gray-700
+                border-gray-600
+                placeholder-gray-400
+                focus:ring-blue-500
+                focus:border-blue-500"
                 placeholder={placeHolder}
                 name={name}
                 required={required}
